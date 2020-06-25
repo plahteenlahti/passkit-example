@@ -58,9 +58,16 @@ export default class Contact extends React.Component {
             method="post"
             action="/thanks/"
             data-netlify="true"
+            netlify-honeypot="bot"
             data-netlify-recaptcha="true"
             onSubmit={this.handleSubmit}
           >
+            <div hidden aria-hidden="true">
+              <label>
+                Don’t fill this out if you're human:
+                <input name="bot-field" />
+              </label>
+            </div>
             <noscript>
               <p>This form won’t work with Javascript disabled</p>
             </noscript>
